@@ -1,3 +1,4 @@
+import 'package:calculator_app/button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -52,42 +53,57 @@ class _MyHomePageState extends State<MyHomePage> {
       
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
-          
+
           children: [
 
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  child: SizedBox(
-                    width: 70,
-                    height: 70,
-                    child: TextButton(
-                      onPressed: () {},
-                      
-                      style: TextButton.styleFrom(
-                        foregroundColor: Colors.black,
-                        backgroundColor: Colors.orange,
-                        shape: RoundedRectangleBorder(
-                        
-                          borderRadius: BorderRadius.circular(5.0)
-                        )
-                      ), 
-                      child: Text('9',
-                                  style: GoogleFonts.rubik(
-                                    textStyle: TextStyle(
-                                      fontSize: 24,
-                                    )
-                                  ),
-                                  ),
-                                 
-                              
-                    ),
-                  ),
-                )
-              ],
 
+                Button('1'),
+                Button('2'),
+                Button('3'),
+                Button('4')
+              ],
             ),
+            
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+
+                Button('1'),
+                Button('2'),
+                Button('3'),
+                Button('4')
+              ],
+            ),
+            
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+
+                Button('1'),
+                Button('2'),
+                Button('3'),
+                Button('4')
+              ],
+            ),
+            
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+
+                Button('1'),
+                Button('2'),
+                Button('3'),
+                Button('4')
+              ],
+            ),
+            
+                    
           ],
+          
+
          
         ),
       ),
