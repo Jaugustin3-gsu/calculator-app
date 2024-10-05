@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const CalulatorApp());
@@ -46,14 +47,36 @@ class _MyHomePageState extends State<MyHomePage> {
 
       body: Center(
       
-        
         child: Column(
-         
-          mainAxisAlignment: MainAxisAlignment.center,
-   
-          children: <Widget>[
-           
+          
+          children: [
+
+            Row(
+              children: [
+                Container(
+                  child: SizedBox(
+                    width: 70,
+                    height: 70,
+                    child: TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0)
+                        )
+                      ), child: Text('9',
+                                      style: GoogleFonts.rubik(
+                                        textStyle: TextStyle(
+                                          fontSize: 24,
+                                        )
+                                      ),),
+                    ),
+                  ),
+                )
+              ],
+
+            ),
           ],
+         
         ),
       ),
       
