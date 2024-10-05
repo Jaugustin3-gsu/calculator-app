@@ -41,13 +41,17 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
        
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+       
         title: Text(widget.title),
       ),
 
+        
+      backgroundColor: const Color.fromARGB(255, 3, 48, 252),
       body: Center(
+        
       
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           
           children: [
 
@@ -59,16 +63,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 70,
                     child: TextButton(
                       onPressed: () {},
+                      
                       style: TextButton.styleFrom(
+                        foregroundColor: Colors.black,
+                        backgroundColor: Colors.orange,
                         shape: RoundedRectangleBorder(
+                        
                           borderRadius: BorderRadius.circular(5.0)
                         )
-                      ), child: Text('9',
-                                      style: GoogleFonts.rubik(
-                                        textStyle: TextStyle(
-                                          fontSize: 24,
-                                        )
-                                      ),),
+                      ), 
+                      child: Text('9',
+                                  style: GoogleFonts.rubik(
+                                    textStyle: TextStyle(
+                                      fontSize: 24,
+                                    )
+                                  ),
+                                  ),
+                                 
+                              
                     ),
                   ),
                 )
