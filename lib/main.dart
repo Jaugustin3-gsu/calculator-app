@@ -53,10 +53,39 @@ class _MyHomePageState extends State<MyHomePage> {
       
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
-
           children: [
 
-            Row(
+
+               Container(
+                alignment: const Alignment(1.0,1.0),
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 12),
+                  child: Text('9231',
+                  style: GoogleFonts.rubik(
+                    textStyle: const TextStyle(
+                      fontSize:24,
+                      color: Colors.grey,
+                    )
+                  ))
+                  
+                ), 
+              ),
+
+              Container(
+                alignment: const Alignment(1.0,1.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Text('9231',
+                  style: GoogleFonts.rubik(
+                    textStyle: const TextStyle(
+                      fontSize:48,
+                      color: Colors.white,
+                    )
+                  ))
+                  
+                ), 
+              ),
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
@@ -67,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
@@ -79,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
@@ -90,13 +119,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                Button('AC',const Color.fromARGB(255, 255, 217, 0),Colors.black,40),
+                Button('AC',Color.fromARGB(255, 255, 217, 0),Colors.black,40),
                 Button('0',Colors.orange,Colors.black,40),
-                Button('=',const Color.fromARGB(255, 255, 217, 0),Colors.black,40),
+                Button('=',Color.fromARGB(255, 255, 217, 0),Colors.black,40),
                 Button('+',Colors.yellow,Colors.black,40)
               ],
             ),
