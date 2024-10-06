@@ -34,6 +34,48 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  late int firstNum;
+  late int secondNum;
+  late String history;
+  late String textToDispaly;
+  late String res;
+  late String operation; 
+
+
+  OnClick(String val){
+  print(val);
+  if (val == 'AC'){
+    firstNum = 0;
+    secondNum = 0;
+    res= '';
+    history = '';
+  }else if(val == '+' || val == '-' || val == '*' || val == '/'){
+    firstNum = int.parse(textToDispaly);
+    res = '';
+    operation = val;
+  }else if (val == '='){
+    secondNum = int.parse(textToDispaly);
+    if(operation == '+') {
+      res = (firstNum + secondNum).toString();
+      history = firstNum.toString() + operation.toString() + secondNum.toString();
+    } if(operation == '-') {
+      res = (firstNum + secondNum).toString();
+      history = firstNum.toString() + operation.toString() + secondNum.toString();
+    } if(operation == '*') {
+      res = (firstNum + secondNum).toString();
+      history = firstNum.toString() + operation.toString() + secondNum.toString();
+    } if(operation == '/') {
+      res = (firstNum + secondNum).toString();
+      history = firstNum.toString() + operation.toString() + secondNum.toString();
+    }
+
+  }
+
+
+}
+
+
  
 
   @override
@@ -85,48 +127,48 @@ class _MyHomePageState extends State<MyHomePage> {
                   
                 ), 
               ),
-            const Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                Button('7',Colors.orange,Colors.black,40),
-                Button('8',Colors.orange,Colors.black,40),
-                Button('9',Colors.orange,Colors.black,40),
-                Button('/',Colors.yellow,Colors.black,40)
+                Button('7',Colors.orange,Colors.black,40,OnClick('7')),
+                Button('8',Colors.orange,Colors.black,40,OnClick('8')),
+                Button('9',Colors.orange,Colors.black,40,OnClick('9')),
+                Button('/',Colors.yellow,Colors.black,40,OnClick('/'))
               ],
             ),
             
-            const Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
                 
-               Button('4',Colors.orange,Colors.black,40),
-                Button('5',Colors.orange,Colors.black,40),
-                Button('6',Colors.orange,Colors.black,40),
-                Button('*',Colors.yellow,Colors.black,40)
+               Button('4',Colors.orange,Colors.black,40,OnClick('4')),
+                Button('5',Colors.orange,Colors.black,40,OnClick('5')),
+                Button('6',Colors.orange,Colors.black,40,OnClick('6')),
+                Button('*',Colors.yellow,Colors.black,40,OnClick('*'))
               ],
             ),
             
-            const Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                Button('1',Colors.orange,Colors.black,40),
-                Button('2',Colors.orange,Colors.black,40),
-                Button('3',Colors.orange,Colors.black,40),
-                Button('-',Colors.yellow,Colors.black,40)
+                Button('1',Colors.orange,Colors.black,40,OnClick('1')),
+                Button('2',Colors.orange,Colors.black,40,OnClick('2')),
+                Button('3',Colors.orange,Colors.black,40,OnClick('3')),
+                Button('-',Colors.yellow,Colors.black,40,OnClick('-'))
               ],
             ),
             
-            const Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                Button('AC',Color.fromARGB(255, 255, 217, 0),Colors.black,40),
-                Button('0',Colors.orange,Colors.black,40),
-                Button('=',Color.fromARGB(255, 255, 217, 0),Colors.black,40),
-                Button('+',Colors.yellow,Colors.black,40)
+                Button('AC',Color.fromARGB(255, 255, 217, 0),Colors.black,40,OnClick('AC')),
+                Button('0',Colors.orange,Colors.black,40,OnClick('0')),
+                Button('=',Color.fromARGB(255, 255, 217, 0),Colors.black,40,OnClick('=')),
+                Button('+',Colors.yellow,Colors.black,40,OnClick('+'))
               ],
             ),
             

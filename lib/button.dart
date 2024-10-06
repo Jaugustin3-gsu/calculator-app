@@ -6,15 +6,17 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Button extends StatelessWidget {
   
+fuc(){}
 
 final String num;
 final Color fillColor;
 final Color textColor;
 final double textSize;
-//final Function callback;
+late final Function callback;
 
 
-const Button(this.num,this.fillColor,this.textColor,this.textSize,);
+
+   Button(this.num,this.fillColor,this.textColor,this.textSize, callback, {super.key});
 
 @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ const Button(this.num,this.fillColor,this.textColor,this.textSize,);
                     width: 80,
                     height: 80,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {callback(num);},
                       
                       style: TextButton.styleFrom(
                         foregroundColor: textColor,
