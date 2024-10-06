@@ -8,8 +8,13 @@ class Button extends StatelessWidget {
   
 
 final String num;
+final Color fillColor;
+final Color textColor;
+final double textSize;
+//final Function callback;
 
-const Button(this.num);
+
+const Button(this.num,this.fillColor,this.textColor,this.textSize,);
 
 @override
   Widget build(BuildContext context) {
@@ -17,14 +22,14 @@ const Button(this.num);
       
                 margin: EdgeInsets.all(10),
                   child: SizedBox(
-                    width: 70,
-                    height: 70,
+                    width: 80,
+                    height: 80,
                     child: TextButton(
                       onPressed: () {},
                       
                       style: TextButton.styleFrom(
-                        foregroundColor: Colors.black,
-                        backgroundColor: Colors.orange,
+                        foregroundColor: textColor,
+                        backgroundColor: fillColor,
                         shape: RoundedRectangleBorder(
                         
                           borderRadius: BorderRadius.circular(5.0)
@@ -33,7 +38,7 @@ const Button(this.num);
                       child: Text(num,
                                   style: GoogleFonts.rubik(
                                     textStyle: TextStyle(
-                                      fontSize: 24,
+                                      fontSize: textSize,
                                     )
                                   ),
                                   ),

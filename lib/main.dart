@@ -60,10 +60,10 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                Button('1'),
-                Button('2'),
-                Button('3'),
-                Button('4')
+                Button('7',Colors.orange,Colors.black,40),
+                Button('8',Colors.orange,Colors.black,40),
+                Button('9',Colors.orange,Colors.black,40),
+                Button('/',Colors.yellow,Colors.black,40)
               ],
             ),
             
@@ -71,10 +71,11 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                Button('1'),
-                Button('2'),
-                Button('3'),
-                Button('4')
+                
+               Button('4',Colors.orange,Colors.black,40),
+                Button('5',Colors.orange,Colors.black,40),
+                Button('6',Colors.orange,Colors.black,40),
+                Button('*',Colors.yellow,Colors.black,40)
               ],
             ),
             
@@ -82,10 +83,10 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                Button('1'),
-                Button('2'),
-                Button('3'),
-                Button('4')
+                Button('1',Colors.orange,Colors.black,40),
+                Button('2',Colors.orange,Colors.black,40),
+                Button('3',Colors.orange,Colors.black,40),
+                Button('-',Colors.yellow,Colors.black,40)
               ],
             ),
             
@@ -93,10 +94,10 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                Button('1'),
-                Button('2'),
-                Button('3'),
-                Button('4')
+                Button('AC',const Color.fromARGB(255, 255, 217, 0),Colors.black,40),
+                Button('0',Colors.orange,Colors.black,40),
+                Button('=',const Color.fromARGB(255, 255, 217, 0),Colors.black,40),
+                Button('+',Colors.yellow,Colors.black,40)
               ],
             ),
             
