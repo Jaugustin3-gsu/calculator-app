@@ -2,6 +2,7 @@ import 'package:calculator_app/button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
 void main() {
   runApp(const CalulatorApp());
 }
@@ -35,44 +36,71 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  late int firstNum;
-  late int secondNum;
-  late String history;
-  late String textToDispaly;
-  late String res;
-  late String operation; 
+    late int firstNum;
+   late int  secondNum;
+  String history = '';
+   String textToDisplay = '';
+   late String res;
+   late String operation; 
+String displayText = '';
 
 
-  OnClick(String val){
+ void OnClick(String val){
+    
   print(val);
+
   if (val == 'AC'){
-    firstNum = 0;
-    secondNum = 0;
-    res= '';
-    history = '';
-  }else if(val == '+' || val == '-' || val == '*' || val == '/'){
-    firstNum = int.parse(textToDispaly);
+      setState(() {
+        firstNum = 0;
+        secondNum = 0;
+        res;
+        history = '';
+        textToDisplay = '';
+
+    });
+  } else if(val == '+' || val == '-' || val == '*' || val == '/'){
+    
+   firstNum = int.tryParse(textToDisplay)??0;
+    print('textToDisplay = ' +  textToDisplay);
     res = '';
     operation = val;
+
+    setState(() {
+      textToDisplay = '';
+    });
+   
   }else if (val == '='){
-    secondNum = int.parse(textToDispaly);
+
+    secondNum = int.parse(textToDisplay);
+   
     if(operation == '+') {
       res = (firstNum + secondNum).toString();
-      history = firstNum.toString() + operation.toString() + secondNum.toString();
+      
+    //  history = firstNum.toString() + operation.toString() + secondNum.toString();
     } if(operation == '-') {
-      res = (firstNum + secondNum).toString();
-      history = firstNum.toString() + operation.toString() + secondNum.toString();
+      res = (firstNum - secondNum).toString();
+    //  history = firstNum.toString() + operation.toString() + secondNum.toString();
     } if(operation == '*') {
-      res = (firstNum + secondNum).toString();
-      history = firstNum.toString() + operation.toString() + secondNum.toString();
+      res = (firstNum * secondNum).toString();
+    //  history = firstNum.toString() + operation.toString() + secondNum.toString();
     } if(operation == '/') {
-      res = (firstNum + secondNum).toString();
-      history = firstNum.toString() + operation.toString() + secondNum.toString();
+      res = secondNum != 0 ? (firstNum / secondNum).toString() : 'Error';
+    //  history = firstNum.toString() + operation.toString() + secondNum.toString();
+    
     }
 
-  }
-
-
+    setState(() {
+   textToDisplay = res;
+   history = '$firstNum $operation $secondNum';
+  
+    });
+   }else {
+    // Handle number and append to display
+    setState(() {
+      textToDisplay += val;
+    });
+   }
+    
 }
 
 
@@ -102,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 alignment: const Alignment(1.0,1.0),
                 child: Padding(
                   padding: const EdgeInsets.only(right: 12),
-                  child: Text('9231',
+                  child: Text(history,
                   style: GoogleFonts.rubik(
                     textStyle: const TextStyle(
                       fontSize:24,
@@ -117,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 alignment: const Alignment(1.0,1.0),
                 child: Padding(
                   padding: const EdgeInsets.all(12),
-                  child: Text('9231',
+                  child: Text(textToDisplay,
                   style: GoogleFonts.rubik(
                     textStyle: const TextStyle(
                       fontSize:48,
@@ -131,10 +159,10 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                Button('7',Colors.orange,Colors.black,40,OnClick('7')),
-                Button('8',Colors.orange,Colors.black,40,OnClick('8')),
-                Button('9',Colors.orange,Colors.black,40,OnClick('9')),
-                Button('/',Colors.yellow,Colors.black,40,OnClick('/'))
+                Button('7',Colors.orange,Colors.black,40,OnClick),
+                Button('8',Colors.orange,Colors.black,40,OnClick),
+                Button('9',Colors.orange,Colors.black,40,OnClick),
+                Button('/',Colors.yellow,Colors.black,40,OnClick)
               ],
             ),
             
@@ -143,10 +171,10 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
 
                 
-               Button('4',Colors.orange,Colors.black,40,OnClick('4')),
-                Button('5',Colors.orange,Colors.black,40,OnClick('5')),
-                Button('6',Colors.orange,Colors.black,40,OnClick('6')),
-                Button('*',Colors.yellow,Colors.black,40,OnClick('*'))
+               Button('4',Colors.orange,Colors.black,40,OnClick),
+                Button('5',Colors.orange,Colors.black,40,OnClick),
+                Button('6',Colors.orange,Colors.black,40,OnClick),
+                Button('*',Colors.yellow,Colors.black,40,OnClick)
               ],
             ),
             
@@ -154,10 +182,10 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                Button('1',Colors.orange,Colors.black,40,OnClick('1')),
-                Button('2',Colors.orange,Colors.black,40,OnClick('2')),
-                Button('3',Colors.orange,Colors.black,40,OnClick('3')),
-                Button('-',Colors.yellow,Colors.black,40,OnClick('-'))
+                Button('1',Colors.orange,Colors.black,40,OnClick),
+                Button('2',Colors.orange,Colors.black,40,OnClick),
+                Button('3',Colors.orange,Colors.black,40,OnClick),
+                Button('-',Colors.yellow,Colors.black,40,OnClick)
               ],
             ),
             
@@ -165,10 +193,10 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                Button('AC',Color.fromARGB(255, 255, 217, 0),Colors.black,40,OnClick('AC')),
-                Button('0',Colors.orange,Colors.black,40,OnClick('0')),
-                Button('=',Color.fromARGB(255, 255, 217, 0),Colors.black,40,OnClick('=')),
-                Button('+',Colors.yellow,Colors.black,40,OnClick('+'))
+                Button('AC',Color.fromARGB(255, 255, 217, 0),Colors.black,40,OnClick),
+                Button('0',Colors.orange,Colors.black,40,OnClick),
+                Button('=',Color.fromARGB(255, 255, 217, 0),Colors.black,40,OnClick),
+                Button('+',Colors.yellow,Colors.black,40,OnClick)
               ],
             ),
             
